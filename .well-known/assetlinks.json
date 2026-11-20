@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.khutwattifli.app",
+      "sha256_cert_fingerprints": [
+        "E4:3C:64:28:13:35:65:F8:B6:3E:2C:DF:A9:97:85:8A:EA:09:81:EA:BE:DB:E5:CB:F3:3A:3D:27:16:81:1A:B9"
+      ]
+    }
+  }
+]

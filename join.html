@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دعوة إلى عائلة – خطوات طفلي | Family invite – BabySteps</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+<header class="site"><span class="brand">خطوات طفلي · BabySteps</span></header>
+<section class="lang-block" lang="ar" dir="rtl">
+<h1>تمت دعوتك إلى عائلة</h1>
+<p>ثبّت تطبيق «خطوات طفلي»، ثم سجّل الدخول واختر «الانضمام برمز» وأدخل هذا الرمز:</p>
+<div class="code" id="code-ar"></div>
+<p><a class="button" id="open-ar" href="#">فتح التطبيق</a></p>
+</section>
+<section class="lang-block" lang="en" dir="ltr">
+<h1>You were invited to a family</h1>
+<p>Install BabySteps, sign in, choose "Join with a code" and enter:</p>
+<div class="code" id="code-en"></div>
+<p><a class="button" id="open-en" href="#">Open the app</a></p>
+</section>
+<footer>© 2026 anonymoussoft team · <a href="babysteps/privacy.html">Privacy</a></footer>
+</main>
+<script>
+  // Invite codes are 8 characters from an unambiguous alphabet; anything else is dropped.
+  var code = (new URLSearchParams(location.search).get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+  ['code-ar', 'code-en'].forEach(function (id) { document.getElementById(id).textContent = code || '—'; });
+  var deepLink = 'babysteps://join?code=' + encodeURIComponent(code);
+  ['open-ar', 'open-en'].forEach(function (id) { document.getElementById(id).href = deepLink; });
+</script>
+</body>
+</html>
